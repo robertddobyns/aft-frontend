@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 
 import {UserProvider} from "./components/security/UserProvider";
 import {Header} from "./components/header/Header";
@@ -11,7 +11,7 @@ import {Home} from './components/pages/home/Home';
 function App() {
   return (
       <UserProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Header/>
           <SearchBar/>
           <Routes>
@@ -20,7 +20,7 @@ function App() {
             <Route path={'/'} element={<Home/>}/>
             <Route path={'*'} element={<h1>Page Not Found</h1>}/>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </UserProvider>
   );
 }

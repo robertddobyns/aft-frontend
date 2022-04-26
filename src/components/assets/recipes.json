@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "description": "This is a description",
+    "name": "Test Recipe",
+    "temp": 400,
+    "timeInMinutes": 7,
+    "url": "test-recipe"
+  },
+  {
+    "id": 2,
+    "description": "This is another description",
+    "name": "Fart",
+    "temp": 400,
+    "timeInMinutes": 7,
+    "url": "fart"
+  }
+]

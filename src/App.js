@@ -5,6 +5,7 @@ import {UserProvider} from "./components/security/UserProvider";
 import {Header} from "./components/header/Header";
 import {SearchBar} from "./components/header/SearchBar";
 import {Search} from "./components/pages/search/Search";
+import {Recipe} from "./components/pages/recipes/Recipe";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Header/>
           <SearchBar/>
           <Routes>
-            <Route path={'/recipe/:recipeName'} element={<h1>Recipe Name</h1>}/>
+            <Route path={'/recipe/:recipeName'} element={<Recipe/>}/>
             <Route path={'/search'} element={<Search/>} />
             <Route path={'/'} element={<h1>Home page</h1>}/>
             <Route path={'*'} element={<h1>Page Not Found</h1>}/>

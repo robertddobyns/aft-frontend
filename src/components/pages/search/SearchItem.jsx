@@ -21,8 +21,7 @@ const Root = styled(Paper)(({theme}) => ({
   flexDirection: 'column',
   textAlign: 'center',
   maxWidth: '1000px',
-  [theme.breakpoints.down('sm')]: {
-  }
+  marginBottom: '10px',
 }))
 
 const StatsContainer = styled('div')(({theme}) => ({

@@ -6,6 +6,7 @@ import {Header} from "./components/header/Header";
 import {SearchBar} from "./components/header/SearchBar";
 import {Search} from "./components/pages/search/Search";
 import {Recipe} from "./components/pages/recipes/Recipe";
+import {Home} from './components/pages/home/Home';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Routes>
             <Route path={'/recipe/:recipeName'} element={<Recipe/>}/>
             <Route path={'/search'} element={<Search/>} />
-            <Route path={'/'} element={<h1>Home page</h1>}/>
+            <Route path={'/'} element={<Home/>}/>
             <Route path={'*'} element={<h1>Page Not Found</h1>}/>
           </Routes>
         </BrowserRouter>

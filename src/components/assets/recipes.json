@@ -1,18 +1,50 @@
 [
   {
     "id": 1,
-    "description": "This is a description",
-    "name": "Test Recipe",
+    "description": "Cook time depends on thickness of breast.",
+    "name": "Thawed Chicken Breast",
     "temp": 400,
-    "timeInMinutes": 7,
-    "url": "test-recipe"
+    "timeInMinutes": "10-15",
+    "url": "thawed-chicken-breast"
   },
   {
     "id": 2,
-    "description": "This is another description",
-    "name": "Fart",
+    "description": "Wash and dry potato. Rub potato with Canola oil and sprinkle with salt before cooking",
+    "name": "Baked Potato",
     "temp": 400,
-    "timeInMinutes": 7,
-    "url": "fart"
+    "timeInMinutes": 40,
+    "url": "baked-potato"
+  },
+  {
+    "id": 3,
+    "name": "Frozen Chicken Nuggets",
+    "temp": 100,
+    "timeInMinutes": "10",
+    "description": "",
+    "url": "frozen-chicken-nuggets"
+  },
+  {
+    "id": 4,
+    "name": "Fresh Potato Wedges",
+    "temp": 400,
+    "timeInMinutes": "15-20",
+    "description": "Wash potatoes and cut into wedges. Place potatoes into cold water and let sit for 30 minutes. Drain and dry. Cook in air fryer, stirring twice. After cooking, place in bowl and sprinkle with spices such as seasoning salt.",
+    "url": "fresh-potato-wedges"
+  },
+  {
+    "id": 5,
+    "name": "Frozen French Fries",
+    "temp": 400,
+    "timeInMinutes": "15-20",
+    "description": "Toss fries with seasoning salt, if desired and cook on a single layer.",
+    "url": "frozen-french-fries"
+  },
+  {
+    "id": 6,
+    "name": "Crispy Fresh Brussel Sprouts",
+    "temp": 390,
+    "timeInMiutes": "7-8",
+    "description": "Place brussel sprouts in bowl and microwave with 1/4 cup water, covered, for 3 minutes. Drain off water toss with olivie oil, garlic powder, onion powder and salt. Cook in air fryer.",
+    "url": "crispy-fresh-brussel-sprouts"
   }
 ]

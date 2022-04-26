@@ -33,25 +33,27 @@ export function SearchBar(props) {
 }
 
 const Root = styled('div')(({theme}) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
     width: '100%',
   },
   [theme.breakpoints.up('sm')]: {
     margin: '0 auto',
-    width: '1000px'
+    width: '1000px',
   }
 }))
 
 const Form = styled('form')(({theme}) => ({
   display: 'flex',
   marginBottom: '20px',
+  width: '100%',
   [theme.breakpoints.down('sm')] : {
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%'
   },
   [theme.breakpoints.up('sm')] : {
     flexDirection: 'row',
-    width: '100%'
   }
 }))

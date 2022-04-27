@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/aft-frontend/static/css/main.e6c13ad2.css",
-    "main.js": "/aft-frontend/static/js/main.b509acf4.js",
+    "main.js": "/aft-frontend/static/js/main.298ea496.js",
     "static/js/787.cbe1a794.chunk.js": "/aft-frontend/static/js/787.cbe1a794.chunk.js",
     "index.html": "/aft-frontend/index.html",
     "main.e6c13ad2.css.map": "/aft-frontend/static/css/main.e6c13ad2.css.map",
-    "main.b509acf4.js.map": "/aft-frontend/static/js/main.b509acf4.js.map",
+    "main.298ea496.js.map": "/aft-frontend/static/js/main.298ea496.js.map",
     "787.cbe1a794.chunk.js.map": "/aft-frontend/static/js/787.cbe1a794.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b509acf4.js"
+    "static/js/main.298ea496.js"
   ]
 }

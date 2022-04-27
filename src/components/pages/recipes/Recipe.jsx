@@ -9,30 +9,37 @@ export function Recipe(props) {
 
   useEffect(() => {
     const getData = () => {
-      const foundRecipe = recipes.filter(item => item.url === urlParams.recipeName)
+      const foundRecipe = recipes.filter(
+          item => item.url === urlParams.recipeName)
       setRecipe(foundRecipe[0])
     }
     getData()
-  },[urlParams.recipeName])
+  }, [urlParams.recipeName])
 
   return (
       <Root>
-        <Title>{recipe.name}</Title>
-        <InstructionContainer>
-          <p>Cook time: {recipe.timeInMinutes} minutes</p>
-          <p>Temp: {recipe.temp}</p>
-          <p>Instructions: {recipe.description}</p>
-        </InstructionContainer>
+        {recipe ?
+            <div>
+              <Title>{recipe.name}</Title>
+              <InstructionContainer>
+                <p>Cook time: {recipe.timeInMinutes} minutes</p>
+                <p>Temp: {recipe.temp}</p>
+                <p>Instructions: {recipe.description}</p>
+              </InstructionContainer>
+            </div>
+            :
+            <h1 style={{textAlign: 'center'}}>Recipe Not Found</h1>
+        }
       </Root>
   )
 }
 
 const Root = styled('div')(({theme}) => ({
-  [theme.breakpoints.down('sm')] : {
+  [theme.breakpoints.down('sm')]: {
     width: '100%',
     margin: '0 5px'
   },
-  [theme.breakpoints.up('sm')] : {
+  [theme.breakpoints.up('sm')]: {
     maxWidth: '1000px',
     margin: '0 auto'
   }
@@ -42,6 +49,4 @@ const Title = styled('h1')(({theme}) => ({
   textAlign: 'center'
 }))
 
-const InstructionContainer = styled('div')(({theme}) => ({
-
-}))
+const InstructionContainer = styled('div')(({theme}) => ({}))

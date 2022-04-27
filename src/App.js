@@ -17,7 +17,8 @@ function App() {
           <Routes>
             <Route path={'/recipe/:recipeName'} element={<Recipe/>}/>
             <Route path={'/search'} element={<Search/>} />
-            <Route path={'/'} element={<Home/>}/>
+            <Route index element={<Home/>}/>
+            <Route path={'*'} element={<h1 style={{textAlign: 'center'}}>Page Not Found</h1>}/>
           </Routes>
         </HashRouter>
       </UserProvider>

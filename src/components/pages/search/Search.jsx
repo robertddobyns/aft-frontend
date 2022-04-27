@@ -33,7 +33,7 @@ export function Search() {
       setSearchResults(filteredRecipes)
     }
     getData()
-  }, [])
+  }, [query])
 
   return (
       <Root>

@@ -18,9 +18,9 @@
   {
     "id": 3,
     "name": "Frozen Chicken Nuggets",
-    "temp": 100,
+    "temp": 400,
     "timeInMinutes": "10",
-    "description": "",
+    "description": "Lay nuggets out in a single layer. Flip after 8 minutes.",
     "url": "frozen-chicken-nuggets"
   },
   {
@@ -46,5 +46,13 @@
     "timeInMiutes": "7-8",
     "description": "Place brussel sprouts in bowl and microwave with 1/4 cup water, covered, for 3 minutes. Drain off water toss with olivie oil, garlic powder, onion powder and salt. Cook in air fryer.",
     "url": "crispy-fresh-brussel-sprouts"
+  },
+  {
+    "id": 7,
+    "name": "Frozen Fish Sticks",
+    "temp": 400,
+    "timeInMinutes": "10",
+    "description": "Lay fish sticks out in a single layer. Flip after 8 minutes.",
+    "url": "frozen-fish-sticks"
   }
 ]

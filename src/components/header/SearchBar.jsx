@@ -1,33 +1,53 @@
 import React, {useEffect, useState} from 'react'
+
 import {
   styled,
   TextField,
-  Autocomplete, Button,
+  Autocomplete,
+  Box
 } from "@mui/material";
-
-import {useNavigate} from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 export function SearchBar(props) {
   const [keyword, setKeyword] = useState('')
-  const navigate = useNavigate()
+  const [searchResults, setSearchResults] = useState({})
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    navigate('/search?keyword='+keyword)
-    setKeyword('')
-  }
+  useEffect(() => {
+    const getData = () => {
+      fetch(process.env.REACT_APP_BASE_URL + 'recipes?search=' + keyword)
+      .then(res => res.json())
+      .then(data => setSearchResults(data))
+      .catch(e => console.log(e))
+    }
+    getData()
+  }, [])
 
   return (
       <Root>
-        <Form onSubmit={handleSubmit}>
-          <TextField
-            value={keyword}
-            onChange={e => setKeyword(e.target.value)}
-            size={'small'}
+        <Autocomplete
+            id={'search-box'}
+            getOptionLabel={(searchResults) => searchResults.name}
+            options={searchResults}
+            onInputChange={e => setKeyword(e.target.value)}
             sx={{width: '98%'}}
-          />
-          <Button type={"submit"}>Search</Button>
-        </Form>
+            isOptionEqualToValue={(option, value) =>
+                option.name === value.name
+            }
+            noOptionsText={'No recipes found for that search'}
+            renderOption={(props, searchResults) => (
+                <Box>
+                  <Link to={'recipe/' + searchResults.url}>
+                    {searchResults.name}
+                  </Link>
+                </Box>
+            )}
+            renderInput={(params) => (
+                <TextField key={params.key}
+                           {...params}
+                           label={'Search for a recipe'}
+                />)
+            }
+        />
       </Root>
   )
 }
@@ -38,22 +58,10 @@ const Root = styled('div')(({theme}) => ({
   alignItems: 'center',
   [theme.breakpoints.down('sm')]: {
     width: '100%',
+    marginBottom: '20px',
   },
   [theme.breakpoints.up('sm')]: {
     margin: '0 auto',
     width: '1000px',
-  }
-}))
-
-const Form = styled('form')(({theme}) => ({
-  display: 'flex',
-  marginBottom: '20px',
-  width: '100%',
-  [theme.breakpoints.down('sm')] : {
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  [theme.breakpoints.up('sm')] : {
-    flexDirection: 'row',
   }
 }))

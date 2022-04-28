@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {styled} from "@mui/material";
 import {useParams} from "react-router-dom";
 import recipes from '../../assets/recipes.json'
+import axios from "axios";
 
 export function Recipe(props) {
   const [recipe, setRecipe] = useState({})
@@ -9,10 +10,15 @@ export function Recipe(props) {
 
   useEffect(() => {
     const getData = () => {
-      const foundRecipe = recipes.filter(
-          item => item.url === urlParams.recipeName)
-      setRecipe(foundRecipe[0])
+      axios.get(process.env.REACT_APP_BASE_URL + 'recipes/' + urlParams.recipeName)
+      .then(res => setRecipe(res.data))
+      .catch(e => console.log(e))
     }
+    // const getData = () => {
+    //   const foundRecipe = recipes.filter(
+    //       item => item.url === urlParams.recipeName)
+    //   setRecipe(foundRecipe[0])
+    // }
     getData()
   }, [urlParams.recipeName])
 

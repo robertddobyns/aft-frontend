@@ -14,7 +14,7 @@ export function SearchBar(props) {
 
   useEffect(() => {
     const getData = () => {
-      fetch(process.env.REACT_APP_BASE_URL + 'recipes?search=' + keyword)
+      fetch(process.env.REACT_APP_BASE_URL + 'recipes')
       .then(res => res.json())
       .then(data => setSearchResults(data))
       .catch(e => console.log(e))

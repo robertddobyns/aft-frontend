@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start:dev`
+### `npm run start:dev`
 
 Runs the app in the development mode with local db connections.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,13 +14,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm start:prod`
+### `npm run start:prod`
 
 Runs the app in the development mode with prod db connections.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### `npm run storybook`
+
+Runs the storybook server on port 6006
 
 ### `npm run deploy`
 This will publish the frontend site to github.io. It builds the pages

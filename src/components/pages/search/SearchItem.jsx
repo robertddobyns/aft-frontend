@@ -10,7 +10,7 @@ export function SearchItem(props) {
         <StatsContainer>
           <Stat>Cook Time: {props.time} minutes</Stat>
           <Stat>Temp: {props.temp}</Stat>
-          <Link to={'/recipe/' + props.url}>more info...</Link>
+          {props.description && <Link to={'/recipe/' + props.url}>more info...</Link>}
         </StatsContainer>
       </Root>
   )

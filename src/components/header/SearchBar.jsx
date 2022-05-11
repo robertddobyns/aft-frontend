@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 import axios from "axios";
 
 export function SearchBar(props) {
-  const [searchResults, setSearchResults] = useState({})
+  const [searchResults, setSearchResults] = useState([])
 
   useEffect(() => {
     const getData = () => {
@@ -69,6 +69,6 @@ const Root = styled('div')(({theme}) => ({
   },
   [theme.breakpoints.up('sm')]: {
     margin: '0 auto',
-    width: '1000px',
+    maxWidth: '1000px',
   }
 }))

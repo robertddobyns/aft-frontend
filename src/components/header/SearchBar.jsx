@@ -7,20 +7,27 @@ import {
   Box
 } from "@mui/material";
 import {Link} from 'react-router-dom'
+import axios from "axios";
 
 export function SearchBar(props) {
-  const [keyword, setKeyword] = useState('')
   const [searchResults, setSearchResults] = useState({})
 
   useEffect(() => {
     const getData = () => {
-      fetch(process.env.REACT_APP_BASE_URL + 'recipes')
-      .then(res => res.json())
-      .then(data => setSearchResults(data))
+      axios.get(process.env.REACT_APP_BASE_URL + 'recipes')
+      .then(res => setSearchResults(res.data))
       .catch(e => console.log(e))
     }
     getData()
   }, [])
+
+  const handleKeywordSearch = (event) => {
+    if (event.target.value.length > 2) {
+      axios.get(process.env.REACT_APP_BASE_URL + 'recipes?search=' + event.target.value)
+      .then(res => setSearchResults(res.data))
+      .catch(e => console.log(e))
+    }
+  }
 
   return (
       <Root>
@@ -28,7 +35,7 @@ export function SearchBar(props) {
             id={'search-box'}
             getOptionLabel={(searchResults) => searchResults.name}
             options={searchResults}
-            onInputChange={e => setKeyword(e.target.value)}
+            onInputChange={handleKeywordSearch}
             sx={{width: '98%'}}
             isOptionEqualToValue={(option, value) =>
                 option.name === value.name

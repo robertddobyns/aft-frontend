@@ -16,22 +16,22 @@ export function Search() {
   const [searchResults, setSearchResults] = useState({})
 
   useEffect(() => {
-    // const getData = () => {
-    //   query.get('keyword') ?
-    //       axios.get(
-    //           process.env.REACT_APP_BASE_URL + 'recipes?search=' + query.get(
-    //               'keyword'))
-    //       .then(res => setSearchResults(res.data))
-    //       .catch(e => console.log(e))
-    //       :
-    //       axios.get(process.env.REACT_APP_BASE_URL + 'recipes')
-    //       .then(res => setSearchResults(res.data))
-    //       .catch(e => console.log(e))
-    // }
     const getData = () => {
-      const filteredRecipes = recipes.filter(item => item.name.toLowerCase().search(query.get('keyword')) > -1)
-      setSearchResults(filteredRecipes)
+      query.get('keyword') ?
+          axios.get(
+              process.env.REACT_APP_BASE_URL + 'recipes?search=' + query.get(
+                  'keyword'))
+          .then(res => setSearchResults(res.data))
+          .catch(e => console.log(e))
+          :
+          axios.get(process.env.REACT_APP_BASE_URL + 'recipes')
+          .then(res => setSearchResults(res.data))
+          .catch(e => console.log(e))
     }
+    // const getData = () => {
+    //   const filteredRecipes = recipes.filter(item => item.name.toLowerCase().search(query.get('keyword')) > -1)
+    //   setSearchResults(filteredRecipes)
+    // }
     getData()
   }, [query])
 

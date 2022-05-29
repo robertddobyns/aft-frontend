@@ -1,27 +1,35 @@
-import React from 'react'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import React, {useState} from 'react'
+import {Routes, Route} from 'react-router-dom'
 
-import {UserProvider} from "./components/security/UserProvider";
-import {Header} from "./components/header/Header";
-import {SearchBar} from "./components/header/SearchBar";
 import {Search} from "./components/pages/search/Search";
 import {Recipe} from "./components/pages/recipes/Recipe";
 import {Home} from './components/pages/home/Home';
+import Login from "./components/security/Login";
+import Layout from "./Layout";
+import Missing from "./components/pages/missing/Missing";
+import Test from './components/security/Test'
+import RequireAuth from "./components/security/RequireAuth";
 
 function App() {
+
   return (
-      <UserProvider>
-        <Router>
-          <Header/>
-          <SearchBar/>
-          <Routes>
-            <Route path={'/recipe/:recipeName'} element={<Recipe/>}/>
-            <Route path={'/search'} element={<Search/>} />
-            <Route index element={<Home/>}/>
-            <Route path={'*'} element={<h1 style={{textAlign: 'center'}}>Page Not Found</h1>}/>
-          </Routes>
-        </Router>
-      </UserProvider>
+      <Routes>
+        <Route path={'/'} element={<Layout/>}>
+          {/* public routes */}
+          <Route path={'login'} element={<Login/>}/>
+          <Route index path={'/'} element={<Home/>}/>
+          <Route index path={'/search'} element={<Search/>}/>
+          <Route path={'/recipe/:recipeName'} element={<Recipe/>}/>
+
+          {/* private routes*/}
+          <Route element={<RequireAuth allowedRoles={['USER', 'ADMIN']}/>}>
+            <Route path={'/test'} element={<Test/>}/>
+          </Route>
+
+          {/* Catch All*/}
+          <Route path={'*'} element={<Missing/>}/>
+        </Route>
+      </Routes>
   );
 }
 

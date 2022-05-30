@@ -9,6 +9,7 @@ import Layout from "./Layout";
 import Missing from "./components/pages/missing/Missing";
 import Test from './components/security/Test'
 import RequireAuth from "./components/security/RequireAuth";
+import {AddRecipe} from "./components/pages/add/AddRecipe";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
 
           {/* private routes*/}
           <Route element={<RequireAuth allowedRoles={['USER', 'ADMIN']}/>}>
+            <Route path={'/add-recipe'} element={<AddRecipe/>} />
             <Route path={'/test'} element={<Test/>}/>
           </Route>
 
